@@ -1,0 +1,107 @@
+# Binary System
+
+>> How to convert bin to dec and vice versa
+
+	1. bin to dec
+			1010
+			0 * 2^0
+			1 * 2^1
+			0 * 2^2
+			1 * 2^3
+		+
+		-------------
+		0+2+0+8 = 10
+
+
+	2. dec to bin
+
+		10
+		10 % 2 = 0  ^
+		5 % 2 = 1  /|\
+		2 % 2 = 0	|
+		1 % 2 = 1	|
+
+		-----------
+		1010
+
+>> Cool Formulas
+
+	a<<n = a * 2^n
+	a>>n = a / 2^n
+
+	5 -> 101
+	101<<1 = 1010 = 10 = 5*2^1
+	101>>1 = 10 = 2 = 5/2^1
+
+>> Bitman
+
+	1. Get Bit
+
+		101
+		010 -> 1<<1
+	&
+	----------
+		000 means 0
+
+	2. Clear Bit
+
+		101
+		100  -> 1<<2
+		011  -> ~
+	&
+	------------
+		001
+
+	3. Set Bit
+
+		101
+		100 -> 1<<2
+	|
+	------------
+		101
+
+>> Power of 2
+
+	if n is power of 2, it will have only 1 '1' and rest '0'
+		eg: 2	=> 10
+			4	=> 100
+			8	=> 1000
+			16	=> 10000
+
+	lets assume n = 20 => 10100
+	19 will be => 10011
+	here we see a pattern,
+	if we swap all digits of n from right till first occuring '1', it will be n-1 
+
+	then if we do n & n-1
+	eg: 8
+		1000
+		0111
+		-----
+		0000 if it is a power of 2
+
+		note(not related to this question):
+			if not a power of 2, only rightmost 1 is different
+				eg: 11010 => 26
+					11001 => 25
+					-----
+					11000 compare it with 11010(26) only rightmost 1 is changed to '0'
+
+
+
+>> Subset of collection
+
+	Finding all possible subset of a array
+	eg:
+	'a','b','c'
+	if we print binaries from 0 to (2^n -1)	=> (no of subset possible ie 2^n)
+	000		=>	{}
+	001		=>	{'c'}
+	010		=>	{'b'}
+	011		=>	{'b','c'}
+	100		=>	{'a'}
+	101		=>	{'a','c'}
+	110		=>	{'a','b'}
+	111		=>	{'a','b','c'}
+
+
