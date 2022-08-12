@@ -79,8 +79,10 @@
 		0111
 		-----
 		0000 if it is a power of 2
+		
+		---(Corner Case: if n == 0 then n-1 is not possible)---
 
-		note(not related to this question):
+		*note(not related to this question):
 			if not a power of 2, only rightmost 1 is different
 				eg: 11010 => 26
 					11001 => 25
@@ -103,5 +105,16 @@
 	101		=>	{'a','c'}
 	110		=>	{'a','b'}
 	111		=>	{'a','b','c'}
+
+>> XOR Magic
+
+	a ^ b = c
+	then
+	c ^ a = b
+	c ^ b = a
+
+	also
+	a ^ a = 0
+	0 ^ a = a
 
 
